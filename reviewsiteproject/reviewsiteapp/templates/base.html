@@ -1,0 +1,31 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Song Rating Site</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+        <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+
+    </head>
+    <body>
+        <div class='jumbotron'>
+            <h1>Song Rating</h1>
+            <table>
+              {% for s in songs_list %}
+              <tr> 
+                <td>testing</td>
+                <td>{{s.song_title}}</td>
+                <td> {{s.date_release}}</td>
+
+              </tr>
+            {% endfor %}
+            </table>
+            {% ratings object %}
+        </div>
+       
+    </body>
+</html>
+{% endblock %}
